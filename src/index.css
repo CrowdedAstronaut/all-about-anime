@@ -139,3 +139,138 @@ img {
 .details p {
   margin: 0;
 }
+/* Set box-sizing for all elements */
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+/* Create color variables */
+:root {
+  --primary: #5f9ae0;
+  --secondary: #ff7f50;
+  --secondary-light: #ffa483;
+  --white: #fff;
+}
+
+/* Remove the body margin */
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+/* Style the button and tell it not to grow */
+button {
+  background-color: var(--primary);
+  border: 0;
+  color: var(--white);
+  flex-grow: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+}
+
+/* Add some margin on the left of any buttons
+that follow another button or an input */
+button + button,
+input + button {
+  margin-left: 2px;
+}
+
+form {
+  padding: 1rem 0;
+}
+
+/* Style the input and tell it to grow */
+input {
+  background-color: var(--secondary-light);
+  border: 2px solid var(--secondary);
+  color: var(--white);
+  flex-grow: 1;
+  font-size: 1.2rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+/* Set the color of the placeholder text */
+input::placeholder {
+  color: var(--white);
+}
+
+/* Change the background of the input when
+it is focused or hovered and remove its
+default outline */
+input:focus,
+input:hover {
+  background-color: var(--secondary);
+  outline: 0;
+}
+
+/* Apply flex to the form */
+.form-horizontal {
+  align-items: center;
+  display: flex;
+}
+
+img {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Add a media query to add more space between
+the button and input when the browser is at least
+600px wide */
+@media (min-width: 600px) {
+  button + button,
+  input + button {
+    margin-left: 1rem;
+  }
+}
+
+
+.gallery {
+  column-count: 2;
+}
+
+
+@media (min-width: 1000px) {
+.gallery {
+  column-count: 3;
+}
+}
+
+@media (min-width: 1400px) {
+.gallery {
+  column-count: 4;
+}
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  width: auto;
+}
+
+.brand img {
+  height: 2rem;
+  margin: 0 0.5rem 0 0;
+  width: auto;
+}
+
+.brand h1 {
+  font-weight: 200;
+  letter-spacing: -1px;
+  margin-right: 1rem;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+

@@ -4,7 +4,7 @@ export default function SearchForm({
   searchString,
 }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-horizontal">
       <input
         placeholder="Search"
         type="text"

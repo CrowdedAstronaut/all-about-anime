@@ -2,6 +2,7 @@ import { useState, useEffect, Link } from "react";
 import ReactPaginate from "react-paginate";
 
 import "./App.css";
+import SearchForm from "./SearchForm/SearchForm";
 
 function App() {
   const [pageNumber, setPageNumber] = useState(0);
@@ -76,6 +77,7 @@ function App() {
 
   return (
     <section className="container">
+      <SearchForm />
       {pageNumberData}
       <ReactPaginate
         previousLabel={"<- Previous"}
