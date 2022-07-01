@@ -1,13 +1,141 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: red;
+}
+
+a:hover {
+  color: green;
+}
+
+body {
+  font-family: "Bangers", cursive;
+  color: white;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  background: url("https://github.com/CrowdedAstronaut/react-anime-site/blob/main/src/images/anime-background.jpg?raw=true") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+  margin: 0;
+}
+h2 {
+  text-align: center;
+}
+
+header {
+  background-color: black;
+  color: white;
+}
+
+header a {
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  );
+  /* grid-auto-rows: 1fr; */
+  grid-gap: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+p {
+  text-align: center;
+}
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.card {
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: max-content 150px 1fr;
+}
+
+.card:hover {
+  opacity: 0.5;
+}
+
+.card-image {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.card-title {
+  background-color: #6f7476;
+  color: white;
+  border-radius: 0 0 1rem 1rem;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  height: 150px;
+}
+
+.card-title h3 {
+  font-weight: 300;
+}
+
+.details-container {
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.details-image {
+  padding: 1rem;
+  width: 200px;
+}
+
+.details {
+  padding: 1rem;
+  width: 350px;
+}
+
+.details h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-bottom: 0;
+}
+
+.details h3 {
+  font-style: italic;
+  font-weight: 200;
+  margin-top: 0;
+}
+
+.details h4 {
+  margin-bottom: 0;
+}
+
+.details p {
+  margin: 0;
 }
