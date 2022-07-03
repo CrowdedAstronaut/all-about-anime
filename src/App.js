@@ -1,7 +1,9 @@
 import { useState, useEffect, Link } from "react";
 import ReactPaginate from "react-paginate";
-
+import { Route } from "react-router";
+import About from "./About/About";
 import "./App.css";
+import NavHeader from "./NavHeader/NavHeader";
 import SearchForm from "./SearchForm/SearchForm";
 
 function App() {
@@ -76,21 +78,25 @@ function App() {
   const pageCount = Math.ceil(animes.length / PER_PAGE);
 
   return (
-    <section className="container">
+    <>
+      <NavHeader />
       <SearchForm />
-      {pageNumberData}
-      <ReactPaginate
-        previousLabel={"<- Previous"}
-        nextLabel={"Next ->"}
-        pageCount={pageCount}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination"}
-        previousLinkClassName={"pagination__link"}
-        nextLinkClassName={"pagination__link"}
-        disabledClassName={"pagination__link--disabled"}
-        activeClassName={"pagination__link--active"}
-      />
-    </section>
+      <section className="container">
+        {pageNumberData}
+        <ReactPaginate
+          previousLabel={"<- Previous"}
+          nextLabel={"Next ->"}
+          pageCount={pageCount}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination"}
+          previousLinkClassName={"pagination__link"}
+          nextLinkClassName={"pagination__link"}
+          disabledClassName={"pagination__link--disabled"}
+          activeClassName={"pagination__link--active"}
+        />
+      </section>
+      {/* <Route path="/about" exact component={About} /> */}
+    </>
   );
 }
 

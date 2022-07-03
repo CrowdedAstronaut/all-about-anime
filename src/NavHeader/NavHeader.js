@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
+import About from "../About/About";
 
 export default function NavHeader() {
-  return <div>NavHeader</div>;
+  return <NavLink to="/about"> About </NavLink>;
 }

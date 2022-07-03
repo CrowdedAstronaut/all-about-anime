@@ -6,7 +6,7 @@
 
 a {
   text-decoration: none;
-  color: red;
+ color: white /* color: red; */
 }
 
 a:hover {
@@ -148,19 +148,13 @@ img {
 
 /* Create color variables */
 :root {
-  --primary: #5f9ae0;
-  --secondary: #ff7f50;
-  --secondary-light: #ffa483;
+  --primary: #090909;
+  --secondary: #6d6b6a;
+  --secondary-light: #9f9a98;
   --white: #fff;
 }
 
-/* Remove the body margin */
-body {
-  font-family: sans-serif;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0 1rem;
-}
+
 
 /* Style the button and tell it not to grow */
 button {
