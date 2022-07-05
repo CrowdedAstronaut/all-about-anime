@@ -5,6 +5,7 @@ import About from "./About/About";
 import "./App.css";
 import NavHeader from "./NavHeader/NavHeader";
 import SearchForm from "./SearchForm/SearchForm";
+import Card from "./Card/Card";
 
 function App() {
   const [pageNumber, setPageNumber] = useState(0);
@@ -16,7 +17,7 @@ function App() {
     category: "/anime",
     numresults: 20,
     pageoffset: 0,
-    endpoint: "/search",
+    endpoint: "/anime-characters",
   };
   const PER_PAGE = 10;
 
@@ -26,6 +27,7 @@ function App() {
 
   async function getAnimes(searchString) {
     const url = `${searchOptions.api}${searchOptions.category}?page%5Blimit%5D=${searchOptions.numresults}&page%5Boffset%5D=${searchOptions.pageoffset}`;
+    const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]${searchString}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -58,20 +60,7 @@ function App() {
     .slice(offset, offset + PER_PAGE)
     .map((card, idx) => (
       // <Link to={`/details/${card.id}`} key={card.id}>
-      <div className="card">
-        <div className="card-image">
-          {
-            <img
-              src={card.attributes.posterImage.original}
-              alt={card.attributes.canonicalTitle}
-            />
-          }
-        </div>
-        <div className="card-title">
-          <h3>{card.attributes.canonicalTitle}</h3>
-          <p></p>
-        </div>
-      </div>
+      <Card key={card.id} card={card} />
       // </Link>
     ));
 
@@ -80,7 +69,10 @@ function App() {
   return (
     <>
       <NavHeader />
-      <SearchForm />
+      <SearchForm
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
       <section className="container">
         {pageNumberData}
         <ReactPaginate
@@ -95,7 +87,6 @@ function App() {
           activeClassName={"pagination__link--active"}
         />
       </section>
-      {/* <Route path="/about" exact component={About} /> */}
     </>
   );
 }
