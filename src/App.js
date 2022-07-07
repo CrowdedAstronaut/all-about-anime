@@ -5,18 +5,26 @@ import About from "./About/About";
 import "./App.css";
 import NavHeader from "./NavHeader/NavHeader";
 import SearchForm from "./SearchForm/SearchForm";
-import Card from "./Card/Card";
 import Home from "./Home/Home";
+import CardDetails from "./CardDetails/CardDetails";
 
 function App() {
   return (
     <>
       <NavHeader />
-
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/search" element={<SearchForm />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/about" element={<About />} />
+        <Route
+          exact
+          path="/search"
+          element={<SearchForm />}
+        />
+        <Route
+          exact
+          path="details/:id"
+          element={<CardDetails />}
+        />
       </Routes>
     </>
   );

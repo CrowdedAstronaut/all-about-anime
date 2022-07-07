@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "../Card/Card";
+import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import SearchForm from "../SearchForm/SearchForm";
 
@@ -54,14 +55,14 @@ export default function Home() {
   const pageNumberData = animes
     .slice(offset, offset + PER_PAGE)
     .map((card, idx) => (
-      // <Link to={`/details/${card.id}`} key={card.id}>
-      <Card
-        key={card.id}
-        card={card}
-        idx={idx}
-        src={card.links.next}
-      />
-      // </Link>
+      <Link to={`/details/${card.id}`} key={card.id}>
+        <Card
+          key={card.id}
+          card={card}
+          idx={idx}
+          src={card.links.next}
+        />
+      </Link>
     ));
 
   const pageCount = Math.ceil(animes.length / PER_PAGE);
