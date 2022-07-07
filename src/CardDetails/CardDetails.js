@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 // import { matchPath } from "react-router";
 
-export default function CardDetails() {
+export default function CardDetails({ props }) {
   const [anime, setAnimeDetails] = useState([]);
   useEffect(() => {
     const getAnimeDetails = async () => {
       const DETAILS_SEARCH = {
-        url: `https://kitsu.io/api/edge/anime/1`,
+        url: `https://kitsu.io/api/edge/anime/${props.match.params.id}`,
       };
       const detailsEndPoint = `${DETAILS_SEARCH.url}`;
       try {
@@ -16,20 +16,20 @@ export default function CardDetails() {
         let data2 = Object.values(data)[0];
         setAnimeDetails(data2);
         // console.log(data2.id);
-        console.log(data2);
+        // console.log(data2);
       } catch (err) {
         console.log(err);
       }
     };
 
     getAnimeDetails(anime);
-    console.log(anime);
+    console.log(props);
     // eslint-disable-next-line
   }, []);
 
   return (
     <div className="card-details">
-      <div className="card-header">
+      {/* <div className="card-header">
         <h1>{anime.attributes.canonicalTitle}</h1>
         <div className="card-image">
           <img
@@ -40,7 +40,7 @@ export default function CardDetails() {
         <p className="detail-description">
           {anime.attributes.description}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }
