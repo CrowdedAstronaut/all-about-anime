@@ -16,7 +16,12 @@ export default function SearchForm({
           onChange={handleChange}
           value={searchString}
         />
-        <button type="submit">Search</button>
+        <button
+          type="submit"
+          style={{ backgroundColor: "grey" }}
+        >
+          Search
+        </button>
       </form>
     </div>
   );
