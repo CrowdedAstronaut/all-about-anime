@@ -4,15 +4,20 @@ export default function SearchForm({
   searchString,
 }) {
   return (
-    <form onSubmit={handleSubmit} className="form-horizontal">
-      <input
-        placeholder="Search"
-        type="text"
-        name="searchString"
-        onChange={handleChange}
-        value={searchString}
-      />
-      <button type="submit"></button>
-    </form>
+    <div className="search">
+      <form
+        onSubmit={handleSubmit}
+        className="form-horizontal"
+      >
+        <input
+          placeholder="Search"
+          type="text"
+          name="searchString"
+          onChange={handleChange}
+          value={searchString}
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
   );
 }
