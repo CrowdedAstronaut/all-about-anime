@@ -1,29 +1,31 @@
+import Card from "../Card/Card";
+
 export default function SearchForm({
+  card,
   handleChange,
   handleSubmit,
   searchString,
 }) {
+  // console.log(card);
   return (
     <div className="search">
       <form
         onSubmit={handleSubmit}
         className="form-horizontal"
       >
+        <label htmlFor="searchQuery"></label>
         <input
-          placeholder="Search"
           type="text"
-          name="searchString"
+          id="searchQuery"
+          placeholder="Search for an anime character"
           onChange={handleChange}
           value={searchString}
         />
-        <button
-          type="submit"
-          style={{ backgroundColor: "grey" }}
-          // onClick={handleSubmit}
-        >
-          Search
+        <button className="find" type="submit">
+          SEARCH
         </button>
       </form>
+      {/* <Card card={card} /> */}
     </div>
   );
 }

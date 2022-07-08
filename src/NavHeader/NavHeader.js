@@ -1,9 +1,6 @@
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 
-import About from "../About/About";
-import Home from "../Home/Home";
-import Search from "../SearchForm/SearchForm";
 export default function NavHeader() {
   return (
     <nav>
