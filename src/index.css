@@ -6,7 +6,7 @@
 
 a {
   text-decoration: none;
- color: white /* color: red; */
+  color: white; /* color: red; */
 }
 
 a:hover {
@@ -20,8 +20,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  background: url("https://github.com/CrowdedAstronaut/react-anime-site/blob/main/src/images/anime-background.jpg?raw=true") no-repeat
-    center center fixed;
+  background: url("https://github.com/CrowdedAstronaut/react-anime-site/blob/main/src/images/anime-background.jpg?raw=true")
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -154,8 +154,6 @@ img {
   --white: #fff;
 }
 
-
-
 /* Style the button and tell it not to grow */
 button {
   background-color: var(--primary);
@@ -204,12 +202,6 @@ input:hover {
   outline: 0;
 }
 
-/* Apply flex to the form */
-.form-horizontal {
-  align-items: center;
-  display: flex;
-}
-
 img {
   margin-bottom: 1rem;
   width: 100%;
@@ -225,22 +217,20 @@ the button and input when the browser is at least
   }
 }
 
-
 .gallery {
   column-count: 2;
 }
 
-
 @media (min-width: 1000px) {
-.gallery {
-  column-count: 3;
-}
+  .gallery {
+    column-count: 3;
+  }
 }
 
 @media (min-width: 1400px) {
-.gallery {
-  column-count: 4;
-}
+  .gallery {
+    column-count: 4;
+  }
 }
 
 .brand {
@@ -261,10 +251,3 @@ the button and input when the browser is at least
   margin-right: 1rem;
   white-space: nowrap;
 }
-
-
-
-
-
-
-

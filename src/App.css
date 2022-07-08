@@ -16,3 +16,13 @@ nav {
   align-items: center;
   list-style: none;
 }
+
+.search {
+  padding: 0% 10%;
+}
+
+.form-horizontal {
+  /* align-items: center; */
+  display: flex;
+  min-height: 2vh;
+}

@@ -66,7 +66,7 @@ export default function Home() {
     ));
 
   const pageCount = Math.ceil(animes.length / PER_PAGE);
-  return (
+  return animes.length > 0 ? (
     <>
       <SearchForm
         handleChange={handleChange}
@@ -87,5 +87,7 @@ export default function Home() {
         />
       </section>
     </>
+  ) : (
+    <h1>loading...</h1>
   );
 }
