@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 // import { matchPath } from "react-router";
 
-export default function CardDetails({ props }) {
+export default function CardDetails({ card }) {
   const [anime, setAnimeDetails] = useState([]);
   useEffect(() => {
     const getAnimeDetails = async () => {
       const DETAILS_SEARCH = {
-        url: `https://kitsu.io/api/edge/anime/${props.match.params.id}`,
+        url: `https://kitsu.io/api/edge/anime/1`,
       };
       const detailsEndPoint = `${DETAILS_SEARCH.url}`;
       try {
@@ -23,7 +23,7 @@ export default function CardDetails({ props }) {
     };
 
     getAnimeDetails(anime);
-    console.log(props);
+    console.log(card);
     // eslint-disable-next-line
   }, []);
 

@@ -33,7 +33,7 @@ export default function Home() {
 
   async function getAnimes(searchString) {
     const url = `${searchOptions.api}${searchOptions.category}?page%5Blimit%5D=${searchOptions.numresults}&page%5Boffset%5D=${offset}`;
-    const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]${searchString}`;
+    // const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]${searchString}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -55,15 +55,12 @@ export default function Home() {
   const pageNumberData = animes
     .slice(offset, offset + PER_PAGE)
     .map((card, idx) => (
-      <Link
-        to={`/details/${card.id}`}
-        key={card.attributes.createdAt}
-      >
+      <Link to={`/details/${card.id}`} key={card.id}>
         <Card
           key={card.id}
           card={card}
           idx={idx}
-          src={card.links.next}
+          // src={card.links.next}
         />
       </Link>
     ));

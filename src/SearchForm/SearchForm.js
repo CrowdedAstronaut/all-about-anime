@@ -19,6 +19,7 @@ export default function SearchForm({
         <button
           type="submit"
           style={{ backgroundColor: "grey" }}
+          // onClick={handleSubmit}
         >
           Search
         </button>
