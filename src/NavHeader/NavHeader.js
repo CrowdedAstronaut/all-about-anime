@@ -7,7 +7,9 @@ import Search from "../SearchForm/SearchForm";
 export default function NavHeader() {
   return (
     <nav>
-      <h2>All About Anime</h2>
+      <h2>
+        <a href="/">All About Anime</a>
+      </h2>
       <ul className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
