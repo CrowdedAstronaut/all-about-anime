@@ -55,12 +55,9 @@ export default function Home() {
   const pageNumberData = animes
     .slice(offset, offset + PER_PAGE)
     .map((card, idx) => (
-      <Link
-        to={`/details/${card.id}`}
-        key={card.attributes.createdAt}
-      >
+      <Link to={`/details/${card.id}`} key={card.id}>
         <Card
-          key={card.attributes.createdAt}
+          key={card.id}
           card={card}
           idx={idx}
           // src={card.links.next}

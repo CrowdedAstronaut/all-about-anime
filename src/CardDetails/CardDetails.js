@@ -7,7 +7,7 @@ export default function CardDetails({ card }) {
   useEffect(() => {
     const getAnimeDetails = async () => {
       const DETAILS_SEARCH = {
-        url: `https://kitsu.io/api/edge/anime/2`,
+        url: `https://kitsu.io/api/edge/anime/1`,
       };
       const detailsEndPoint = `${DETAILS_SEARCH.url}`;
       try {
