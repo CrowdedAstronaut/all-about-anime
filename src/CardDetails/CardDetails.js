@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 export default function CardDetails() {
   let { id } = useParams();
 
-  const [anime, setAnimeDetails] = useState([]);
+  const [anime, setAnimeDetails] = useState(null);
   useEffect(() => {
     const getAnimeDetails = async () => {
       const DETAILS_SEARCH = {
@@ -32,22 +32,24 @@ export default function CardDetails() {
     // eslint-disable-next-line
   }, []);
 
-  return anime.length > 0 ? (
-    <div className="card-details">
-      <div className="card-header">
-        <h1>{anime.attributes.canonicalTitle}</h1>
-        <div className="card-image">
-          <img
-            src={anime.attributes.coverImage.original}
-            alt=""
-          />
+  if (!anime) {
+    return null;
+  } else {
+    return (
+      <div className="card-details">
+        <div className="card-header">
+          <h1>{anime.attributes.canonicalTitle}</h1>
+          <div className="card-image">
+            <img
+              src={anime.attributes.coverImage.original}
+              alt=""
+            />
+          </div>
+          <p className="detail-description">
+            {anime.attributes.description}
+          </p>
         </div>
-        <p className="detail-description">
-          {anime.attributes.description}
-        </p>
       </div>
-    </div>
-  ) : (
-    <h1>Loading...</h1>
-  );
+    );
+  }
 }
