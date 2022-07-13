@@ -37,7 +37,7 @@ export default function Home() {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       const objectData = Object.values(data)[0];
       setAnimes(objectData);
     } catch (error) {

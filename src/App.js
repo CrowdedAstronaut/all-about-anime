@@ -1,11 +1,11 @@
-import { useState, useEffect, Link } from "react";
 import ReactPaginate from "react-paginate";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import About from "./About/About";
 import "./App.css";
 import NavHeader from "./NavHeader/NavHeader";
 import SearchForm from "./SearchForm/SearchForm";
 import Home from "./Home/Home";
+import Card from "./Card/Card";
 import CardDetails from "./CardDetails/CardDetails";
 
 function App() {
@@ -20,9 +20,10 @@ function App() {
           path="/search"
           element={<SearchForm />}
         />
+
         <Route
           exact
-          path="details/:id"
+          path="/details/:id"
           element={<CardDetails />}
         />
       </Routes>

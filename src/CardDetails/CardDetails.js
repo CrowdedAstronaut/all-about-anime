@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-// import { matchPath } from "react-router";
+import { useParams } from "react-router-dom";
 
-export default function CardDetails({ card }) {
-  console.log(card);
-  const [anime, setAnimeDetails] = useState([]);
+export default function CardDetails() {
+  let { id } = useParams();
+
+  const [anime, setAnimeDetails] = useState(null);
   useEffect(() => {
     const getAnimeDetails = async () => {
       const DETAILS_SEARCH = {
-        url: `https://kitsu.io/api/edge/anime/1`,
+        url: `https://kitsu.io/api/edge/anime/${id}`,
       };
       const detailsEndPoint = `${DETAILS_SEARCH.url}`;
       try {
@@ -16,7 +17,7 @@ export default function CardDetails({ card }) {
         const data = await response.json();
         let data2 = Object.values(data)[0];
         setAnimeDetails(data2);
-        // console.log(data2.id);
+        // console.log(id.id);
         console.log(data2);
       } catch (err) {
         console.log(err);
@@ -24,25 +25,31 @@ export default function CardDetails({ card }) {
     };
 
     getAnimeDetails();
-    // console.log(card);
+
+    // console.log(anime.attributes.slug);
+    console.log(typeof id);
     console.log(anime);
     // eslint-disable-next-line
   }, []);
 
-  return (
-    <div className="card-details">
-      <div className="card-header">
-        <h1>{anime.attributes.canonicalTitle}</h1>
-        <div className="card-image">
-          <img
-            src={anime.attributes.coverImage.original}
-            alt=""
-          />
+  if (!anime) {
+    return null;
+  } else {
+    return (
+      <div className="card-details">
+        <div className="card-header">
+          <h1>{anime.attributes.canonicalTitle}</h1>
+          <div className="card-image">
+            <img
+              src={anime.attributes.coverImage.original}
+              alt=""
+            />
+          </div>
+          <p className="detail-description">
+            {anime.attributes.description}
+          </p>
         </div>
-        <p className="detail-description">
-          {anime.attributes.description}
-        </p>
       </div>
-    </div>
-  );
+    );
+  }
 }
