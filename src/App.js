@@ -21,7 +21,11 @@ function App() {
           element={<SearchForm />}
         />
 
-        <Route exact path=":id" element={<CardDetails />} />
+        <Route
+          exact
+          path="/details/:id"
+          element={<CardDetails />}
+        />
       </Routes>
     </>
   );

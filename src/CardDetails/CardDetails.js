@@ -18,7 +18,7 @@ export default function CardDetails() {
         let data2 = Object.values(data)[0];
         setAnimeDetails(data2);
         // console.log(id.id);
-        // console.log(data2);
+        console.log(data2);
       } catch (err) {
         console.log(err);
       }
@@ -27,13 +27,14 @@ export default function CardDetails() {
     getAnimeDetails();
 
     // console.log(anime.attributes.slug);
-    console.log(id);
+    console.log(typeof id);
+    console.log(anime);
     // eslint-disable-next-line
   }, []);
 
-  return (
+  return anime.length > 0 ? (
     <div className="card-details">
-      {/* <div className="card-header">
+      <div className="card-header">
         <h1>{anime.attributes.canonicalTitle}</h1>
         <div className="card-image">
           <img
@@ -44,7 +45,9 @@ export default function CardDetails() {
         <p className="detail-description">
           {anime.attributes.description}
         </p>
-      </div> */}
+      </div>
     </div>
+  ) : (
+    <h1>Loading...</h1>
   );
 }
