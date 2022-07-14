@@ -16,7 +16,7 @@ export default function Home() {
     pageoffset: 0,
     endpoint: "/anime-characters",
   };
-  const PER_PAGE = 5;
+  const PER_PAGE = 20;
 
   const handleChange = (event) => {
     setSearchString(event.target.value);

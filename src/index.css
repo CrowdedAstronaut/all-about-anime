@@ -100,6 +100,8 @@ img {
 
 .card-title h3 {
   font-weight: 300;
+  font-size: 1.3rem;
+  /* margin-bottom: 0; */
 }
 
 .details-container {
@@ -108,6 +110,9 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.card-details {
+  padding: 1rem 2rem;
 }
 
 .details-image {
@@ -203,7 +208,7 @@ input:hover {
 }
 
 img {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   width: 100%;
 }
 
