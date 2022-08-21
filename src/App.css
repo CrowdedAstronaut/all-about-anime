@@ -2,7 +2,15 @@
   text-align: center;
 }
 
-nav {
+nav,
+.search,
+.card-details {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.nav-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -15,10 +23,6 @@ nav {
   justify-content: space-around;
   align-items: center;
   list-style: none;
-}
-
-.search {
-  padding: 0% 10%;
 }
 
 .form-horizontal {
