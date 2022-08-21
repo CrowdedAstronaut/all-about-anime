@@ -60,7 +60,9 @@ header a {
 }
 
 p {
-  text-align: center;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 100;
 }
 img {
   object-fit: cover;

@@ -10,6 +10,11 @@ nav,
   padding: 1rem;
 }
 
+.about-wrapper {
+  max-width: 1200px;
+  padding: 1rem;
+  margin: 0 auto;
+}
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
