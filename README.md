@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Description:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React Application that queries the NASA Photo of the Day API and returns 25 results to the user. If the user clicks on a photo, the app will return details about that photo from the NASA API. ![Screen Shot 2021-07-02 at 7 50 09 AM](https://user-images.githubusercontent.com/65795477/124277038-36c57c00-db0a-11eb-8442-4eb2110cd524.png)
 
-## Available Scripts
+# Table of Contents
 
-In the project directory, you can run:
+- [About this project](#about)
+- [Workflow](#workflow)
+- [Technologies](#technologies)
+- [Links](#links)
+- [Installation](#install)
+- [APIs](#apis)
 
-### `yarn start`
+<hr />
+<br />
+[Home_Mobile](https://user-images.githubusercontent.com/65795477/125976547-f39ebe7f-00e5-4988-b107-ff53a5ca906f.jpeg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+what's up at NASA is a working, interactive, full-stack application that receives data from a custom API that we designed. The app allows users to learn more about programming languages, their icons, their authors, and their creation date.
 
-### `yarn test`
+## User Stories (MVP/CRUD)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- As a user of what's up at NASA, I want to be able to view the top programming language and view the properties of each language so I can have all the information in a centralized location.
+- As a user of what's up at NASA, I want to be able to create comments about programming language to be add to the database so that I can interact with the app.
+- As a user of what's up at NASA, I want to be able to see my created post so that I know my post is saved.
+- As a user of what's up at NASA, I want to be able to update a post incase I make a mistake.
+- As a user of what's up at NASA, I want to be able to delete my post so that I can remove any unwanted post.
 
-### `yarn build`
+## Workflow
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Our team used Agile workflow for this sprint.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Version Control
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We implemented Git Feature Branch Workflow. All pull requests in Github were reviewed by another team member before being merged into the main branch.
 
-### `yarn eject`
+## Learning Experience
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Cut problems into smaller pieces and console.log any unknown data. This was our first project as a team and so we relied heavily upon each other to debug our own problems. We learned a lot about communication, division of labor, project management, and how to utilize each of our individual strengths. Read documentation!!! Most of the answers are available if you know where and how to search.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setting Up Project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+One of the key feature of React is the composition of the functional components. Components are reuseable functions in React, and in order to efficiently build our app, we had to carefully decide on a uniform set of data and plan who would work on which components. Before diving into the creating the app, it was important to understand the components hierarchy.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Building the Core Structure
 
-## Learn More
+React Components
+The Component Hierarchy diagram, above, represents of how the components are structured in our app. In what's up at NASA, there are 8 components. Each being a child of the 'App' components, except for the NavHeader and the Footer component.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In this case, all of the event listeners and the main API calls were done in the 'App.js' file and that data is passed down to Languages and then Language.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Dynamic API Calls
 
-### Code Splitting
+By creating our own API, what's up at NASA is able to make dynamic request. For this app, the programming languages endpoint was used. So different props variables were created to make multiple calls.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## User Experience - Responsive design.
 
-### Analyzing the Bundle Size
+Creating a responsive App. what's up at NASA uses React bootstap paired with Flexbox and media queries in order to make it responsive across mobile, tablet, and desktop widths.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Future Directions
 
-### Making a Progressive Web App
+User Stories (Stretch Goals)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- As a user of what's up at NASA, I want a search feature that allows me to search either programing languages or paradigm and get a result of different usage. (edited)
 
-### Advanced Configuration
+## Accomplishments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This application uses a Node, Express, and Mongoose API. There is Create, Read, Update, and Destroy functionality built throughout the app. The front-end uses React and leverages the backend API RESTfully to Create, Read, Update, and Destroy resources. This app uses CSS Grid and Flexbox along with media queries to make your app responsive across mobile, tablet, and desktop widths.
 
-### Deployment
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+yarn install
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
