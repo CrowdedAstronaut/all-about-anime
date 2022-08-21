@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { slide as Menu } from "react-burger-menu";
 
 export default function NavHeader() {
   const [navbarOpen, setNavbarOpen] = useState(false);
