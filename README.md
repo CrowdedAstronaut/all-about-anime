@@ -17,15 +17,11 @@ This is a React Application that queries the anime API, and returns 25 results t
 
 ## Project Description
 
-what's up at NASA is a working, interactive, full-stack application that receives data from a custom API that we designed. The app allows users to learn more about programming languages, their icons, their authors, and their creation date.
+All About Anime is a working, interactive, React application that receives data from an anime API and returns results to the user. The app allows users to learn more about anime, their photos, their names, and their descriptions.
 
 ## User Stories (MVP/CRUD)
 
-- As a user of what's up at NASA, I want to be able to view the top programming language and view the properties of each language so I can have all the information in a centralized location.
-- As a user of what's up at NASA, I want to be able to create comments about programming language to be add to the database so that I can interact with the app.
-- As a user of what's up at NASA, I want to be able to see my created post so that I know my post is saved.
-- As a user of what's up at NASA, I want to be able to update a post incase I make a mistake.
-- As a user of what's up at NASA, I want to be able to delete my post so that I can remove any unwanted post.
+- As a user of All About Anime, I want to be able to view the top anime and view the details of each character so I can have all the information in a centralized location.
 
 ## Workflow
 
@@ -33,7 +29,7 @@ Our team used Agile workflow for this sprint.
 
 # Version Control
 
-We implemented Git Feature Branch Workflow. All pull requests in Github were reviewed by another team member before being merged into the main branch.
+I implemented Git Feature Branch Workflow. All pull requests in Github were reviewed by another team member before being merged into the main branch.
 
 ## Learning Experience
 
@@ -46,23 +42,19 @@ One of the key feature of React is the composition of the functional components.
 ## Building the Core Structure
 
 React Components
-The Component Hierarchy diagram, above, represents of how the components are structured in our app. In what's up at NASA, there are 8 components. Each being a child of the 'App' components, except for the NavHeader and the Footer component.
+The Component Hierarchy diagram, above, represents of how the components are structured in our app.
 
 In this case, all of the event listeners and the main API calls were done in the 'App.js' file and that data is passed down to Languages and then Language.
 
-## Dynamic API Calls
-
-By creating our own API, what's up at NASA is able to make dynamic request. For this app, the programming languages endpoint was used. So different props variables were created to make multiple calls.
-
 ## User Experience - Responsive design.
 
-Creating a responsive App. what's up at NASA uses React bootstap paired with Flexbox and media queries in order to make it responsive across mobile, tablet, and desktop widths.
+Creating a responsive App. All About Anime uses React bootstap paired with Flexbox and media queries in order to make it responsive across mobile, tablet, and desktop widths.
 
 ## Future Directions
 
 User Stories (Stretch Goals)
 
-- As a user of what's up at NASA, I want a search feature that allows me to search either programing languages or paradigm and get a result of different usage. (edited)
+- As a user of All About Anime, I want a search feature that allows me to search for character by name.
 
 ## Accomplishments
 
