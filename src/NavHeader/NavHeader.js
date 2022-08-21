@@ -5,9 +5,9 @@ export default function NavHeader() {
   return (
     <nav>
       <div className="nav-wrapper">
-        <h2>
+        <h1>
           <a href="/">All About Anime</a>
-        </h2>
+        </h1>
         <ul className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>

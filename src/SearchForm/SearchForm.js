@@ -1,5 +1,3 @@
-import Card from "../Card/Card";
-
 export default function SearchForm({
   card,
   handleChange,
@@ -21,7 +19,11 @@ export default function SearchForm({
           onChange={handleChange}
           value={searchString}
         />
-        <button className="find" type="submit">
+        <button
+          className="find"
+          type="submit"
+          // onClick={handleSubmit}
+        >
           SEARCH
         </button>
       </form>
