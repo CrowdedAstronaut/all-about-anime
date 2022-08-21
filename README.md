@@ -1,6 +1,6 @@
 # Description:
 
-This is a React Application that queries the NASA Photo of the Day API and returns 25 results to the user. If the user clicks on a photo, the app will return details about that photo from the NASA API. ![Screen Shot 2021-07-02 at 7 50 09 AM](https://user-images.githubusercontent.com/65795477/124277038-36c57c00-db0a-11eb-8442-4eb2110cd524.png)
+This is a React Application that queries the anime API, and returns 25 results to the user. If the user clicks on a photo, the app will return details about that photo from the API. ![Screen Shot 2021-07-02 at 7 50 09 AM](https://github.com/CrowdedAstronaut/all-about-anime/blob/main/src/assets/images/all-about-anime.png)
 
 # Table of Contents
 
