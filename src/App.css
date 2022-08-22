@@ -22,6 +22,14 @@ nav,
   min-height: 10vh;
 }
 
+.temporary {
+  display: none;
+}
+
+#searchQuery {
+  background-color: white;
+}
+
 .menuNav {
   width: 50%;
   display: flex;

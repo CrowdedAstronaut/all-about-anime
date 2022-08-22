@@ -14,8 +14,17 @@ export default function NavHeader() {
           <a href="/">All About Anime</a>
         </h1>
 
-        <button onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}</button>
-        <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+        <button
+          className="temporary"
+          onClick={handleToggle}
+        >
+          {navbarOpen ? "Close" : "Open"}
+        </button>
+        <ul
+          className={`menuNav ${
+            navbarOpen ? " showMenu" : ""
+          }`}
+        >
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/search">Search</Link>
