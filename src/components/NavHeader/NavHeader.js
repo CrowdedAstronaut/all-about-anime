@@ -13,30 +13,47 @@ export default function NavHeader() {
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
   };
-
   return (
-    <nav>
-      <div className="nav-wrapper">
-        <h1>
-          <a href="/">All About Anime</a>
-        </h1>
-
-        <button
-          className="temporary"
-          onClick={handleToggle}
-        >
-          {navbarOpen ? "Close" : "Open"}
-        </button>
-        <ul
-          className={`menuNav ${
-            navbarOpen ? " showMenu" : ""
-          }`}
-        >
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/search">Search</Link>
+    <header class="page-header" id="header">
+      <button
+        class="hamburger"
+        href="#navbar"
+        aria-label="Open main menu."
+        rel="noopener"
+      >
+        <span class="sr-only">Open main menu</span>
+        <FontAwesomeIcon icon={faBars} aria-hidden="true" />
+      </button>
+      <nav id="navbar">
+        {/* <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}> */}
+        <ul className="page-links">
+          <li>
+            {" "}
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to="/search">Search</Link>
+          </li>
         </ul>
-      </div>
-    </nav>
+        <button class="close" href="#" aria-label="Close main menu.">
+          <span class="sr-only">Close main menu</span>
+          <FontAwesomeIcon
+            icon={faXmark}
+            className="navicon"
+            aria-hidden="true"
+          />
+          <FontAwesomeIcon
+            icon={faWindowClose}
+            className="far fa-window-close "
+            aria-hidden="true"
+          />
+        </button>
+      </nav>
+    </header>
   );
 }
