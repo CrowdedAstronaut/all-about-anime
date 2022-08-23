@@ -31,7 +31,7 @@ export default function Home() {
     getAnimes(searchString);
   }, []);
 
-  async function getAnimes(searchString) {
+  async function getAnimes() {
     const url = `${searchOptions.api}${searchOptions.category}?page%5Blimit%5D=${searchOptions.numresults}&page%5Boffset%5D=${offset}`;
     // const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]${searchString}`;
     try {
@@ -71,6 +71,7 @@ export default function Home() {
       <SearchForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        searchString={searchString}
       />
       <section className="container">
         {pageNumberData}

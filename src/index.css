@@ -48,10 +48,7 @@ header a {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(250px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   /* grid-auto-rows: 1fr; */
   grid-gap: 1rem;
   margin: 0 auto;
@@ -239,23 +236,4 @@ the button and input when the browser is at least
   .gallery {
     column-count: 4;
   }
-}
-
-.brand {
-  align-items: center;
-  display: flex;
-  width: auto;
-}
-
-.brand img {
-  height: 2rem;
-  margin: 0 0.5rem 0 0;
-  width: auto;
-}
-
-.brand h1 {
-  font-weight: 200;
-  letter-spacing: -1px;
-  margin-right: 1rem;
-  white-space: nowrap;
 }
