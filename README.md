@@ -1,6 +1,6 @@
 # Description:
 
-This is a React Application that queries the ![kitsu anime API](https://kitsu.docs.apiary.io/#), and returns 25 results to the user. If the user clicks on a photo, the app will return details about that photo from the API. ![Screen Shot 2021-07-02 at 7 50 09 AM](https://github.com/CrowdedAstronaut/all-about-anime/blob/main/src/assets/images/all-about-anime.png)
+This is a React Application that queries the [kitsu anime API](https://kitsu.docs.apiary.io/#), and returns 25 results to the user. If the user clicks on a photo, the app will return details about that photo from the API. ![Screen Shot 2021-07-02 at 7 50 09 AM](https://github.com/CrowdedAstronaut/all-about-anime/blob/main/src/assets/images/all-about-anime.png)
 
 # Table of Contents
 
