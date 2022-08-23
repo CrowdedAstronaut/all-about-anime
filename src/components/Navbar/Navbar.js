@@ -20,11 +20,11 @@ export default function Navbar() {
         <FontAwesomeIcon icon={faNewspaper} />
         All About Anime
       </h1>
-      <div className="menu-icon"></div>
-      {/* <button className="temporary" onClick={handleToggle}>
-        {navbarOpen ? "Close" : "Open"}
-      </button> */}
-      <ul>
+      <div className={`menu-icon`} onClick={handleToggle}>
+        <FontAwesomeIcon icon={navbarOpen ? faBars : faXmark} />
+      </div>
+
+      <ul className={`nav-menu ${navbarOpen ? " active" : ""}`}>
         {MenuItems.map((item, idx) => {
           return (
             <li key={idx}>
