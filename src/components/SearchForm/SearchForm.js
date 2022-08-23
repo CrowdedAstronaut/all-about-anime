@@ -1,12 +1,10 @@
 import TextField from "@mui/material/TextField";
 import List from "../List/List";
 export default function SearchForm({
-  animes,
   handleChange,
   handleSubmit,
   searchString,
 }) {
-  console.log(animes);
   return (
     <div className="search">
       {/* <form

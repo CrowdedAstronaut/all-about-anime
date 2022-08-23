@@ -20,6 +20,7 @@ export default function Home() {
 
   const handleChange = (event) => {
     setSearchString(event.target.value);
+    console.log(searchString);
   };
 
   const handleSubmit = (event) => {
@@ -33,7 +34,7 @@ export default function Home() {
 
   async function getAnimes(searchString) {
     const url = `${searchOptions.api}${searchOptions.category}?page%5Blimit%5D=${searchOptions.numresults}&page%5Boffset%5D=${offset}`;
-    // const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]${searchString}`;
+
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -66,11 +67,13 @@ export default function Home() {
     ));
 
   const pageCount = Math.ceil(animes.length / PER_PAGE);
+
   return animes.length > 0 ? (
     <>
       <SearchForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        searchString={searchString}
       />
       <section className="container">
         {pageNumberData}
