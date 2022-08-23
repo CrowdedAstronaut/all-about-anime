@@ -13,18 +13,17 @@ export default function NavHeader() {
     setNavbarOpen(!navbarOpen);
   };
   return (
-    <header class="page-header" id="header">
+    <header className="page-header" id="header">
       <button
-        class="hamburger"
-        href="#navbar"
+        className={`menuNav ${navbarOpen ? " navbar open" : ""}`}
+        onClick={handleToggle}
         aria-label="Open main menu."
         rel="noopener"
       >
-        <span class="sr-only">Open main menu</span>
+        <span className="sr-only">Open main menu</span>
         <FontAwesomeIcon icon={faBars} aria-hidden="true" />
       </button>
-      <nav id="navbar">
-        {/* <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}> */}
+      <nav>
         <ul className="page-links">
           <li>
             {" "}
@@ -39,8 +38,8 @@ export default function NavHeader() {
             <Link to="/search">Search</Link>
           </li>
         </ul>
-        <button class="close" href="#" aria-label="Close main menu.">
-          <span class="sr-only">Close main menu</span>
+        <button className="close" href="#" aria-label="Close main menu.">
+          <span className="sr-only">Close main menu</span>
           <FontAwesomeIcon
             icon={faXmark}
             className="navicon"
@@ -48,7 +47,7 @@ export default function NavHeader() {
           />
           <FontAwesomeIcon
             icon={faWindowClose}
-            className="far fa-window-close "
+            className="far fa-window-close"
             aria-hidden="true"
           />
         </button>
