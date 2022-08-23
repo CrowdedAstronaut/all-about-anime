@@ -1,11 +1,13 @@
 import { MenuItems } from "./MenuItems";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faNarwhal,
+  faNewspaper,
   faBars,
   faXmark,
   faWindowClose,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import "./Navbar.css";
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -15,8 +17,8 @@ export default function Navbar() {
   return (
     <nav className="NavbarItem">
       <h1 className="navbar-logo">
+        <FontAwesomeIcon icon={faNewspaper} />
         All About Anime
-        <FontAwesomeIcon icon={faNarwhal} />
       </h1>
       <div className="menu-icon"></div>
       {/* <button className="temporary" onClick={handleToggle}>

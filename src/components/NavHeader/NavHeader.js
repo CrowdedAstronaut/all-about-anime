@@ -6,7 +6,7 @@ import {
   faWindowClose,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-
+import "./NavHeader.css";
 export default function NavHeader() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
@@ -15,7 +15,9 @@ export default function NavHeader() {
   return (
     <header className="page-header" id="header">
       <button
-        className={`menuNav ${navbarOpen ? " navbar open" : ""}`}
+        className={`menuNav ${
+          navbarOpen ? " navbar open" : ""
+        }`}
         onClick={handleToggle}
         aria-label="Open main menu."
         rel="noopener"
@@ -38,7 +40,11 @@ export default function NavHeader() {
             <Link to="/search">Search</Link>
           </li>
         </ul>
-        <button className="close" href="#" aria-label="Close main menu.">
+        <button
+          className="close"
+          href="#"
+          aria-label="Close main menu."
+        >
           <span className="sr-only">Close main menu</span>
           <FontAwesomeIcon
             icon={faXmark}
