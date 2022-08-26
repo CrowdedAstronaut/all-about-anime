@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Andika:ital@1&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
   /* border: 1px solid red; */
@@ -48,10 +52,7 @@ header a {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(250px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   /* grid-auto-rows: 1fr; */
   grid-gap: 1rem;
   margin: 0 auto;

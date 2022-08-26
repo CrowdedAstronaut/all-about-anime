@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Card from "../Card/Card";
 import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
-import SearchForm from "../SearchForm/SearchForm";
+import Search from "../Search/Search";
 
 export default function Home() {
   const [pageNumber, setPageNumber] = useState(0);
@@ -70,7 +70,7 @@ export default function Home() {
 
   return animes.length > 0 ? (
     <>
-      <SearchForm
+      <Search
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         searchString={searchString}
