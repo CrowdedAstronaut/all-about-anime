@@ -32,7 +32,7 @@ export default function Home() {
     getAnimes(searchString);
   }, []);
 
-  async function getAnimes(searchString) {
+  async function getAnimes() {
     const url = `${searchOptions.api}${searchOptions.category}?page%5Blimit%5D=${searchOptions.numresults}&page%5Boffset%5D=${offset}`;
 
     try {
