@@ -5,10 +5,12 @@ export default function SearchForm({
   handleSubmit,
   searchString,
 }) {
-  console.log(searchString);
   return (
     <div className="search">
-      <form onSubmit={handleSubmit} className="form-horizontal">
+      <form
+        onSubmit={handleSubmit}
+        className="form-horizontal"
+      >
         <TextField
           id="searchQuery"
           variant="outlined"

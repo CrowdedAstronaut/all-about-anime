@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Andika:ital@1&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
   /* border: 1px solid red; */
@@ -38,7 +42,7 @@ h1 > a {
 }
 
 header {
-  background-color: black;
+  /* background-color: black; */
   color: white;
 }
 
@@ -161,7 +165,7 @@ img {
 
 /* Style the button and tell it not to grow */
 button {
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
   border: 0;
   color: var(--white);
   flex-grow: 0;
