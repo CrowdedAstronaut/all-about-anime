@@ -3,10 +3,7 @@ import { Routes, Route, useParams } from "react-router-dom";
 import About from "./components/About/About";
 import "./App.css";
 import NavHeader from "./components/NavHeader/NavHeader";
-import Home from "./components/Home/Home";
-import Card from "./components/Card/Card";
-import CardDetails from "./components/CardDetails/CardDetails";
-import Search from "./components/Search/Search";
+
 
 function App() {
   return (
@@ -17,12 +14,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/search" element={<Search />} />
-
-        <Route
-          exact
-          path="/details/:id"
-          element={<CardDetails />}
-        />
+        <Route exact path="/details/:id" element={<CardDetails />} />
       </Routes>
     </>
   );

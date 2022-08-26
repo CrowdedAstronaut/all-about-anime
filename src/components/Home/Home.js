@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import Search from "../Search/Search";
 
+
 export default function Home() {
   const [pageNumber, setPageNumber] = useState(0);
   const [animes, setAnimes] = useState([]);
@@ -34,7 +35,7 @@ export default function Home() {
 
   async function getAnimes() {
     const url = `${searchOptions.api}${searchOptions.category}?page%5Blimit%5D=${searchOptions.numresults}&page%5Boffset%5D=${offset}`;
-
+    // const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]${searchString}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -67,6 +68,7 @@ export default function Home() {
     ));
 
   const pageCount = Math.ceil(animes.length / PER_PAGE);
+
 
   return animes.length > 0 ? (
     <>
