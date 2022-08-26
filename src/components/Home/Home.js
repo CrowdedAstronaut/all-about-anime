@@ -19,8 +19,8 @@ export default function Home() {
   const PER_PAGE = 20;
 
   const handleChange = (event) => {
+    console.log(event.target.value);
     setSearchString(event.target.value);
-    console.log(searchString);
   };
 
   const handleSubmit = (event) => {
