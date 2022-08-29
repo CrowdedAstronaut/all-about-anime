@@ -54,7 +54,7 @@ const DropDown = ({ toggle }) => {
     </div>
   );
 };
-const Search = ({ handleChange, searchString }) => {
+const Search = ({ handleChange, query }) => {
   let [toggleSort, setToggleSort] = useState(false);
   return (
     <div className="py-5">

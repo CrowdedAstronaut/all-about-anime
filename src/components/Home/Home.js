@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import Search from "../Search/Search";
 
-
 export default function Home() {
   const [pageNumber, setPageNumber] = useState(0);
   const [animes, setAnimes] = useState([]);
-  const [searchString, setSearchString] = useState("");
+  const [query, setQuery] = useState("");
   const [search, setLastSearch] = useState("");
   const searchOptions = {
     api: "https://kitsu.io/api/edge",
@@ -19,9 +18,20 @@ export default function Home() {
   };
   const PER_PAGE = 20;
 
+  const filteredAnimes = animes.filter((item) => {
+    return (
+      item.attributes.canonicalTitle
+        .toLowerCase()
+        .includes(query.toLowerCase()) ||
+      item.attributes.description
+        .toLowerCase()
+        .includes(query.toLowerCase())
+    );
+  });
+
   const handleChange = (event) => {
     console.log(event.target.value);
-    setSearchString(event.target.value);
+    setQuery(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -30,12 +40,12 @@ export default function Home() {
   };
 
   useEffect(() => {
-    getAnimes(searchString);
+    getAnimes(query);
   }, []);
 
   async function getAnimes() {
     const url = `${searchOptions.api}${searchOptions.category}?page%5Blimit%5D=${searchOptions.numresults}&page%5Boffset%5D=${offset}`;
-    // const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]${searchString}`;
+    // const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]${query}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -54,7 +64,7 @@ export default function Home() {
   const offset = pageNumber * PER_PAGE;
   console.log("offset", offset);
 
-  const pageNumberData = animes
+  const pageNumberData = filteredAnimes
     .slice(offset, offset + PER_PAGE)
     .map((card, idx) => (
       <Link to={`/details/${card.id}`} key={card.id}>
@@ -67,15 +77,17 @@ export default function Home() {
       </Link>
     ));
 
-  const pageCount = Math.ceil(animes.length / PER_PAGE);
-
+  const pageCount = Math.ceil(
+    filteredAnimes.length / PER_PAGE
+  );
 
   return animes.length > 0 ? (
     <>
       <Search
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        searchString={searchString}
+        query={query}
+        onQueryChange={(myQuery) => setQuery(myQuery)}
       />
       <section className="container">
         {pageNumberData}

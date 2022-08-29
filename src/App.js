@@ -1,4 +1,3 @@
-import ReactPaginate from "react-paginate";
 import { Routes, Route, useParams } from "react-router-dom";
 import About from "./components/About/About";
 import "./App.css";
