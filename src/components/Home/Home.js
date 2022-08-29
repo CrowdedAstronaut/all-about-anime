@@ -16,7 +16,7 @@ export default function Home() {
     pageoffset: 0,
     endpoint: "/anime-characters",
   };
-  const PER_PAGE = 20;
+  const PER_PAGE = 5;
 
   const filteredAnimes = animes.filter((item) => {
     return (
@@ -28,6 +28,7 @@ export default function Home() {
         .includes(query.toLowerCase())
     );
   });
+  console.log(filteredAnimes);
 
   const handleChange = (event) => {
     console.log(event.target.value);

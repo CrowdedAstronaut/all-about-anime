@@ -67,7 +67,7 @@ const Search = ({ handleChange, query }) => {
           type="text"
           name="query"
           id="query"
-          //   value=""
+          // value={query}
           className="pl-8 rounded-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300"
           placeholder="Search"
           onChange={handleChange}

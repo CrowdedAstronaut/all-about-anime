@@ -41,7 +41,7 @@ export default function CardDetails() {
           <h1>{anime.attributes.canonicalTitle}</h1>
           <div className="card-image">
             <img
-              src={anime.attributes.coverImage.original}
+              src={anime.attributes.posterImage.original}
               alt=""
             />
           </div>
