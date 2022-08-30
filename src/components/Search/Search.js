@@ -5,7 +5,13 @@ import {
 } from "react-icons/bi";
 import { useState } from "react";
 
-const DropDown = ({ toggle }) => {
+const DropDown = ({
+  toggle,
+  sortBy,
+  onSortByChange,
+  orderBy,
+  onOrderByChange,
+}) => {
   if (!toggle) {
     return null;
   }
@@ -54,7 +60,13 @@ const DropDown = ({ toggle }) => {
     </div>
   );
 };
-const Search = ({ handleChange, query }) => {
+const Search = ({
+  handleChange,
+  sortBy,
+  onSortByChange,
+  orderBy,
+  onOrderByChange,
+}) => {
   let [toggleSort, setToggleSort] = useState(false);
   return (
     <div className="py-5">
@@ -86,7 +98,17 @@ const Search = ({ handleChange, query }) => {
             >
               Sort By <BiCaretDown className="ml-2" />
             </button>
-            <DropDown toggle={toggleSort} />
+            <DropDown
+              toggle={toggleSort}
+              sortBy={sortBy}
+              onSortByChange={(mySort) =>
+                onSortByChange(mySort)
+              }
+              orderBy={orderBy}
+              onOrderByChange={(myOrder) =>
+                onOrderByChange(myOrder)
+              }
+            />
           </div>
         </div>
       </div>

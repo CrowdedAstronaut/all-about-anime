@@ -9,6 +9,9 @@ export default function Home() {
   const [animes, setAnimes] = useState([]);
   const [query, setQuery] = useState("");
   const [search, setLastSearch] = useState("");
+  const [sortBy, setSortBy] = useState("");
+  const [orderBy, setOrderBy] = useState("asc");
+
   const searchOptions = {
     api: "https://kitsu.io/api/edge",
     category: "/anime",
@@ -18,16 +21,24 @@ export default function Home() {
   };
   const PER_PAGE = 5;
 
-  const filteredAnimes = animes.filter((item) => {
-    return (
-      item.attributes.canonicalTitle
-        .toLowerCase()
-        .includes(query.toLowerCase()) ||
-      item.attributes.description
-        .toLowerCase()
-        .includes(query.toLowerCase())
-    );
-  });
+  const filteredAnimes = animes
+    .filter((item) => {
+      return (
+        item.attributes.canonicalTitle
+          .toLowerCase()
+          .includes(query.toLowerCase()) ||
+        item.attributes.description
+          .toLowerCase()
+          .includes(query.toLowerCase())
+      );
+    })
+    .sort((a, b) => {
+      let order = orderBy === "asc" ? 1 : -1;
+      return a.attributes.canonicalTitle.toLowerCase() <
+        b.attributes.canonicalTitle.toLowerCase()
+        ? -1 * order
+        : 1 * order;
+    });
   console.log(filteredAnimes);
 
   const handleChange = (event) => {
@@ -89,7 +100,12 @@ export default function Home() {
         handleSubmit={handleSubmit}
         query={query}
         onQueryChange={(myQuery) => setQuery(myQuery)}
+        orderBy={orderBy}
+        onOrderChange={(mySort) => setOrderBy(mySort)}
+        sortBy={sortBy}
+        onSortByChange={(mySort) => setSortBy(mySort)}
       />
+
       <section className="container">
         {pageNumberData}
         <ReactPaginate
