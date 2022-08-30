@@ -52,7 +52,7 @@ nav,
 
 nav {
   /* margin: 1rem auto; */
-  background-color: #181a23;
+  /* background-color: #181a23; */
   padding: 1rem;
   z-index: 1000;
   display: flex;
@@ -116,8 +116,8 @@ nav a:focus {
 
 @media screen and (min-width: 768px) {
   nav {
-    border-bottom: 3px solid #484847;
-    border-top: 3px solid #484847;
+    /* border-bottom: 3px solid #484847;
+    border-top: 3px solid #484847; */
     padding: 0;
     position: static;
     height: auto;

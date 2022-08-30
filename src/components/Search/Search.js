@@ -58,8 +58,8 @@ const Search = ({ handleChange, query }) => {
   let [toggleSort, setToggleSort] = useState(false);
   return (
     <div className="py-5">
-      <div className="mt-1 relative rounded-md shadow-sm">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <div className="mt-1 relative rounded-md shadow-sm search">
+        <div className="absolute inset-y-0 left-5 pl-3 flex items-center pointer-events-none">
           <BiSearch />
           <label htmlFor="query" className="sr-only" />
         </div>
@@ -72,7 +72,7 @@ const Search = ({ handleChange, query }) => {
           placeholder="Search"
           onChange={handleChange}
         />
-        <div className="absolute inset-y-0 right-0 flex items-center">
+        <div className="absolute inset-y-0 right-5 flex items-center">
           <div>
             <button
               type="button"
