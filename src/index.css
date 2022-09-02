@@ -66,6 +66,122 @@ header a {
   padding: 1rem;
 }
 
+.App {
+  text-align: center;
+}
+
+nav,
+.search,
+.card-details {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.about-wrapper {
+  max-width: 1200px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+#searchQuery {
+  background-color: white;
+}
+
+.form-horizontal {
+  /* align-items: center; */
+  display: flex;
+  min-height: 2vh;
+}
+
+#navbar {
+  font-size: 18px;
+  /* background-image: linear-gradient(260deg, #161a24 0%, #062952 100%); */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 10px;
+}
+
+.main-nav {
+  list-style-type: none;
+  display: none;
+}
+
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hamburger,
+.close {
+  font-size: 2rem;
+  color: #fdfbfa;
+}
+
+nav {
+  /* margin: 1rem auto; */
+  /* background-color: #181a23; */
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* animate slide up and down */
+  transform: translateY(-100%);
+  transition: transform 0.2s ease;
+}
+
+nav:target {
+  transform: translateY(0);
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+nav a:focus {
+  background-color: #f0c808;
+  color: black;
+}
+.logo {
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+}
+
+.active {
+  display: block;
+}
+
 p {
   font-family: "Andika", sans-serif;
   text-align: left;
@@ -220,6 +336,26 @@ input:hover {
 img {
   /* margin-bottom: 1rem; */
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    /* border-bottom: 3px solid #484847;
+    border-top: 3px solid #484847; */
+    padding: 0;
+    position: static;
+    height: auto;
+    transform: translateY(0);
+  }
+  .hamburger,
+  .close {
+    display: none;
+  }
+  nav ul {
+    flex-flow: row wrap;
+    justify-content: right;
+    margin-right: 5%;
+  }
 }
 
 /* Add a media query to add more space between
