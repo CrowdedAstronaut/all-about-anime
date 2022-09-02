@@ -57,11 +57,14 @@ export default function Home() {
 
   async function getAnimes() {
     const url = `${searchOptions.api}${searchOptions.category}?page%5Blimit%5D=${searchOptions.numresults}&page%5Boffset%5D=${offset}`;
-    // const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]${query}`;
+    // const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]=trieu`;
     try {
       const response = await fetch(url);
       const data = await response.json();
       console.log(data);
+      console.log(Object.values(data)[0]);
+      console.log(Object.values(data)[1]);
+      console.log(Object.values(data)[2]);
       const objectData = Object.values(data)[0];
       setAnimes(objectData);
     } catch (error) {
