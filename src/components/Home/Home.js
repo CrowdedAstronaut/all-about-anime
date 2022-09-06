@@ -8,7 +8,11 @@ export default function Home() {
   const [pageNumber, setPageNumber] = useState(0);
   const [animes, setAnimes] = useState([]);
   const [query, setQuery] = useState("");
-  const [search, setLastSearch] = useState("");
+  const [nextUrl, setNextUrl] = useState(
+    `https://kitsu.io/api/edge/anime?filter[text]=?page[limit]=20&page[offset]=0`
+  );
+
+  // const [search, setLastSearch] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [orderBy, setOrderBy] = useState("asc");
 
@@ -56,15 +60,18 @@ export default function Home() {
   }, []);
 
   async function getAnimes() {
-    const url = `${searchOptions.api}${searchOptions.category}?page%5Blimit%5D=${searchOptions.numresults}&page%5Boffset%5D=${offset}`;
+    const questionURL = `${searchOptions.api}${searchOptions.category}?filter[text]=${query}?page[limit]=${searchOptions.numresults}&page[offset]=${offset}`;
+    console.log(questionURL);
     // const tinkeringurl = `${searchOptions.api}${searchOptions.category}?filter[text]=trieu`;
     try {
-      const response = await fetch(url);
+      const response = await fetch(questionURL);
       const data = await response.json();
       console.log(data);
-      console.log(Object.values(data)[0]);
-      console.log(Object.values(data)[1]);
-      console.log(Object.values(data)[2]);
+      setNextUrl(data.links.next);
+      console.log(nextUrl);
+      // console.log(Object.values(data)[0]);
+      // console.log(Object.values(data)[1]);
+      // console.log(Object.values(data)[2]);
       const objectData = Object.values(data)[0];
       setAnimes(objectData);
     } catch (error) {
