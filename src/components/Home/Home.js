@@ -80,6 +80,7 @@ export default function Home() {
   }
   const handlePageClick = ({ selected: selectedPage }) => {
     console.log("Selected Page", selectedPage);
+    console.log("Next Page", nextUrl);
     setPageNumber(selectedPage);
   };
 
