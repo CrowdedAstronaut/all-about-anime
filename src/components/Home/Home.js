@@ -9,7 +9,7 @@ export default function Home() {
   const [animes, setAnimes] = useState([]);
   const [query, setQuery] = useState("");
   const [nextUrl, setNextUrl] = useState(
-    `https://kitsu.io/api/edge/anime?filter[text]=?page[limit]=20&page[offset]=0`
+    `https://kitsu.io/api/edge/anime?filter[text]=cowboy`
   );
 
   // const [search, setLastSearch] = useState("");
@@ -31,9 +31,7 @@ export default function Home() {
         item.attributes.canonicalTitle
           .toLowerCase()
           .includes(query.toLowerCase()) ||
-        item.attributes.description
-          .toLowerCase()
-          .includes(query.toLowerCase())
+        item.attributes.description.toLowerCase().includes(query.toLowerCase())
       );
     })
     .sort((a, b) => {
@@ -100,9 +98,7 @@ export default function Home() {
       </Link>
     ));
 
-  const pageCount = Math.ceil(
-    filteredAnimes.length / PER_PAGE
-  );
+  const pageCount = Math.ceil(filteredAnimes.length / PER_PAGE);
 
   return animes.length > 0 ? (
     <>
